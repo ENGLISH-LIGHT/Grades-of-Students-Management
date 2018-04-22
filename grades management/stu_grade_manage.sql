@@ -13,7 +13,7 @@ File Encoding         : 65001
 Date: 2018-04-22 20:34:31
 */
 
-SET FOREIGN_KEY_CHECKS=0;
+/*SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
 -- Table structure for `tb_class`
