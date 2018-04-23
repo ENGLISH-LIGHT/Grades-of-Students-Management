@@ -12,7 +12,7 @@
         js文件
     libs:
         自己封装好的模块
-    route：
+    route：--后台处理，当访问某一个接口时
         teacher:
 
         student:
