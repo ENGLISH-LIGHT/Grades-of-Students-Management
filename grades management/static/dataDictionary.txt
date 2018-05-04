@@ -56,7 +56,7 @@ Lno         varchar(10)     课程号     主键
 Tno         varchar(10)     老师工号   外键
 Lname       varchar(20)     课程名      
 Lroom       varchar(20)     教室
-Lsroce      numeric(1,1)    学分
+Lsroce      numeric(2,1)    学分
 ---------------------------------------------------------
 成绩-信息
 Sno         varchar(10)     学号        主键/外键
