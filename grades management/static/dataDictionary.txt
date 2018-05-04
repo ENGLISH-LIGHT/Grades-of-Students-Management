@@ -62,7 +62,9 @@ Lsroce      numeric(2,1)    学分
 Sno         varchar(10)     学号        主键/外键
 Lno         varchar(10)     课程号     主键/外键
 Gscore      float           课程成绩
-GGPA        numeric(3,3)    该课程对应的绩点
+****************作废**************************
+直接通过分值和课程的学分计算
+//GGPA        numeric(3,3)    该课程对应的绩点
 
 
 
