@@ -20,30 +20,39 @@ router.use(function timeLog(req, res, next) {
 });
 
 // 定义网站主页的路由
-router.get('/', function (req, res) {
+router.get('/', function (req, res,next) {
     res.send('home page');
+    // next();
 });
 // 定义访问老师信息/info网站主页的路由
 router.get('/info', function (req, res) {
-    // ' (Sidenti,Stel,SQQ,Swechat,Semail,Saddr,SnativePlace,SdadName,SmumName,SdadTel,SmumTel,Sremarks,SheadImg)'+
-
-    var q = 'INSERT INTO tb_stuothers' +
-        ' VALUES' +
-        ' (' +
-        '\"111122223333444420\",\"18281680001\",\"2319513300\", \"hello girl\",\"2319513300@qq.com\",\"北京市海淀区上地10街10号\",\"四川绵阳\",\"张一人\",\"李一人\",\"15822220001\",\"15922220001\",\"积极向上,阳光可爱\",\"/img/1.png\"'
-        + ')';
-    // console.log(q);
-    db.query(q, (err, data) => {
+  
+db.query("SELECT * FROM tb_teacher",(err, data) => {
+    if (err) {
+        // console.error(11);
+        res.status(500).send('database error').end();
+    } else {
+        res.send(data).end();
+        // console.log(data);
+    }
+});
+    
+});
+// delete info
+router.post('/del', function (req, res) {
+  var q = 'DELETE FROM tb_teacher WHERE Tno= 0001';
+  console.log(q);
+    db.query(q,(err) => {
         if (err) {
-            console.error(11);
-            res.status(500).send('database error');
+            console.error('no');
+            res.status(500).send('database error').end();
         } else {
-            console.log(data);
+            console.log('ok');
+            // res.send(data).end();
+            // console.log(data);
+            res.redirect('/teacher/info');
         }
     });
-    res.end();
-
-
-});
-
+        
+    });
 module.exports = router;
