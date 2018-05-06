@@ -1,9 +1,10 @@
 
 const express = require('express');
 const mysql = require('mysql');
-const route = require('express-route')
+const route = require('express-route');
+const static = require('express-static');
 var app = express();
-app.listen(8888);
+app.listen(8082);
 
 // app.get('/', function (req, res) {
 //   res.send('Hello World!');
@@ -28,3 +29,6 @@ app.listen(8888);
 var teacher = require('./route/teacher/info.js');
 app.use('/teacher/',teacher);
 // app.use('/student/',require('./route/student')());
+
+//5.default：static
+app.use(static("./static/"));
